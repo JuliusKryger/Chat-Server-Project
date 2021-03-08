@@ -1,5 +1,3 @@
-
-import javax.xml.crypto.dsig.spec.HMACParameterSpec;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -52,7 +50,10 @@ public class ClientHandler extends Thread implements Runnable  {
                     clientGoodBye();
                     System.exit(1);
             }
+            toClient.println("Now what? 1/A/E");
+            input = fromClient.readLine();
         }
+        
     }
 
     public void msgToOne() throws IOException {

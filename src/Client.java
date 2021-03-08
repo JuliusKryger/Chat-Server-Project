@@ -3,19 +3,20 @@ import java.net.Socket;
 
 public class Client  {
 
-    private static String serverIP = "127.0.0.1";
-    private static int port = 9090;
-    static boolean running = true;
-
     public static void main(String[] args) throws IOException {
+        new Client().connect("localhost", 5555);
+    }
+
+    public void connect(String address, int port) throws IOException {
         //grants access to the server
-        Socket accessSocket = new Socket(serverIP, port);
+        Socket accessSocket = new Socket(address, port);
 
         //To read and write to the server
         BufferedReader input = new BufferedReader(new InputStreamReader(accessSocket.getInputStream()));
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter toServer = new PrintWriter(accessSocket.getOutputStream(), true);
 
+        boolean running = true;
         while (running){
             System.out.println("type 'stop' to end connection");
             System.out.println("----------");

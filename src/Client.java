@@ -12,6 +12,8 @@ public class Client extends Thread {
         //grants access to the server
         Socket accessSocket = new Socket(address, port);
 
+        ClientHandler clientHandler = new ClientHandler(accessSocket);
+
         //To read and write to the server
         BufferedReader input = new BufferedReader(new InputStreamReader(accessSocket.getInputStream()));
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
@@ -33,4 +35,6 @@ public class Client extends Thread {
         accessSocket.close();
         System.exit(0);
     }
+
+
 }

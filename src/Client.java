@@ -1,9 +1,10 @@
 import java.io.*;
 import java.net.Socket;
 
-public class Client  {
+public class Client extends Thread {
 
     public static void main(String[] args) throws IOException {
+        //adress = IP-adressen, localhost for local connection. - and port is the port you connect through.
         new Client().connect("localhost", 5555);
     }
 
@@ -17,23 +18,19 @@ public class Client  {
         PrintWriter toServer = new PrintWriter(accessSocket.getOutputStream(), true);
 
         boolean running = true;
-        while (running){
+        while (running) {
             System.out.println("type 'stop' to end connection");
             System.out.println("----------");
+
             String readFromKeyboard = keyboard.readLine();
 
             if (readFromKeyboard.equals("stop")) break;
-
             toServer.println(readFromKeyboard);
-
             String serverResponse = input.readLine();
             System.out.println("FROM SERVER :" + serverResponse);
 
         }
-
-
         accessSocket.close();
         System.exit(0);
-
     }
 }

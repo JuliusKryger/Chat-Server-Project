@@ -17,7 +17,7 @@ public class ClientHandler implements Runnable {
     //Provides each instance with a unique id. Simulates the unique userid we will need for the chat-server
     private static int id = 0;
 
-    public ClientHandler(Socket client) throws IOException {
+    public ClientHandler(Socket client, Server server) throws IOException {
         this.id++;
         this.client = client;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -25,7 +25,7 @@ public class ClientHandler implements Runnable {
     }
 
     //This will be used later in our serverClass, as an unique identifier.
-    public int getId() {
+    public static int getId() {
         return id;
     }
 
@@ -34,7 +34,6 @@ public class ClientHandler implements Runnable {
         try {
             clientGreeting();
             protocol();
-
         } catch (IOException e) {
             System.err.println("There is a problem in run method");
             e.printStackTrace();
@@ -43,6 +42,9 @@ public class ClientHandler implements Runnable {
     }
 
     public void protocol() throws IOException {
+
+        String placeholder = null;
+
         toClient.println("Send a message to one person or all?");
         toClient.println("For one person press 1, for all press A");
         toClient.println("Press E to exit");
@@ -53,7 +55,7 @@ public class ClientHandler implements Runnable {
                     msgToOne();
                     break;
                 case "A":
-                    msgToAll();
+                    msgToAll(placeholder);
                     break;
                 case "E":
                     clientGoodBye();
@@ -75,9 +77,9 @@ public class ClientHandler implements Runnable {
         //Skal finde en tråd med et bestemt navn og sige hvis der ikke er nogen tråde som hedder det.
     }
 
-    public void msgToAll() throws IOException {
+    public void msgToAll(String msg) throws IOException {
         toClient.println("What is your message");
-        String msg = fromClient.readLine();
+        msg = fromClient.readLine();
         msgDispatcher.messageToAll(msg);
         msgDispatcher.messageQueue(msg);
         //Den skal kunne sende ud til alle

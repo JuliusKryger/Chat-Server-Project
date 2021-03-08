@@ -12,7 +12,7 @@ public class Client extends Thread {
         //grants access to the server
         Socket accessSocket = new Socket(address, port);
 
-        ClientHandler clientHandler = new ClientHandler(accessSocket);
+        // ClientHandler clientHandler = new ClientHandler(accessSocket); ... fik vist ødelagt denneher.
 
         //To read and write to the server
         BufferedReader input = new BufferedReader(new InputStreamReader(accessSocket.getInputStream()));

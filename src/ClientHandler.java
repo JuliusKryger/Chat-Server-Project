@@ -5,7 +5,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientHandler extends Thread implements Runnable  {
+public class ClientHandler implements Runnable {
+
     private Socket client;
     private BufferedReader fromClient;
     private PrintWriter toClient;
@@ -13,11 +14,19 @@ public class ClientHandler extends Thread implements Runnable  {
     Scanner scanner = new Scanner(System.in);
     MsgDispatcher msgDispatcher;
 
-    public ClientHandler (Socket client) throws IOException {
+    //Provides each instance with a unique id. Simulates the unique userid we will need for the chat-server
+    private static int id = 0;
+
+    public ClientHandler(Socket client) throws IOException {
+        this.id++;
         this.client = client;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
-        toClient = new PrintWriter(client.getOutputStream(),true);
+        toClient = new PrintWriter(client.getOutputStream(), true);
+    }
 
+    //This will be used later in our serverClass, as an unique identifier.
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -38,8 +47,8 @@ public class ClientHandler extends Thread implements Runnable  {
         toClient.println("For one person press 1, for all press A");
         toClient.println("Press E to exit");
         String input = fromClient.readLine();
-        while (!input.equals("E")){
-            switch (input){
+        while (!input.equals("E")) {
+            switch (input) {
                 case "1":
                     msgToOne();
                     break;
@@ -53,7 +62,7 @@ public class ClientHandler extends Thread implements Runnable  {
             toClient.println("Now what? 1/A/E");
             input = fromClient.readLine();
         }
-        
+
     }
 
     public void msgToOne() throws IOException {
@@ -74,7 +83,7 @@ public class ClientHandler extends Thread implements Runnable  {
         //Den skal kunne sende ud til alle
     }
 
-    public void clientGreeting(){
+    public void clientGreeting() {
         toClient.println("What is your name");
         String name = scanner.nextLine();
         Thread.currentThread().setName(name);
@@ -82,7 +91,7 @@ public class ClientHandler extends Thread implements Runnable  {
 
     }
 
-    public void clientGoodBye(){
+    public void clientGoodBye() {
         toClient.println("Goodbye ");
         Thread.currentThread().getName();
     }

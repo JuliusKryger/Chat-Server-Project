@@ -32,10 +32,10 @@ public class Client extends Thread {
             System.out.println("FROM SERVER :" + serverResponse);
 
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> d125d657a8245d38e1382910ad13c99c79d71d4a
+
+
+
         accessSocket.close();
         System.exit(0);
     }

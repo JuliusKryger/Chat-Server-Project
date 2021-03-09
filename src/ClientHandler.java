@@ -21,11 +21,11 @@ public class ClientHandler implements Runnable {
         this.id++;
         this.client = client;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
-<<<<<<< HEAD
+
         toClient = new PrintWriter(client.getOutputStream(),true);
-=======
+
         toClient = new PrintWriter(client.getOutputStream(), true);
->>>>>>> d125d657a8245d38e1382910ad13c99c79d71d4a
+
     }
 
     //This will be used later in our serverClass, as an unique identifier.

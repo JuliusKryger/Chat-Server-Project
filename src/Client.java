@@ -30,7 +30,6 @@ public class Client  {
 
         }
 
-
         accessSocket.close();
         System.exit(0);
 

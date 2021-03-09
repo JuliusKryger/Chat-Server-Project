@@ -15,7 +15,6 @@ public class ClientHandler implements Runnable {
         this.client = client;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
         toClient = new PrintWriter(client.getOutputStream(),true);
-
     }
 
 

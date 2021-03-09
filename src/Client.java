@@ -17,6 +17,7 @@ public class Client  {
         PrintWriter toServer = new PrintWriter(accessSocket.getOutputStream(), true);
 
         while (running){
+            System.out.println("Welcome to our virtual server");
             System.out.println("type 'stop' to end connection");
             System.out.println("----------");
             String readFromKeyboard = keyboard.readLine();

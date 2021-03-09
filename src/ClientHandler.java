@@ -116,17 +116,17 @@ public class ClientHandler implements Runnable {
     }
 
     public void clientGreeting() throws IOException {
-<<<<<<< HEAD
+
         toClient.println("What is your name");
         String name = fromClient.readLine();
         Thread.currentThread().setName(name);
-=======
+
         System.out.println("Welcome to our virtual server");
         toClient.println("What is your name");
-        String name = fromClient.readLine();
+        //String name = fromClient.readLine();
         this.name = name;
         ///???
->>>>>>> main
+
         toClient.println("Hello " + name);
 
     }

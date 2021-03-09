@@ -18,16 +18,9 @@ public class Client extends Thread {
         PrintWriter toServer = new PrintWriter(accessSocket.getOutputStream(), true);
         boolean running = true;
 
-<<<<<<< HEAD
 
-        while (running) {
-
-            System.out.println("Welcome to our virtual server");
-            System.out.println("type 'stop' to end connection");
-            System.out.println("----------");
-=======
         while (running){
->>>>>>> main
+
 
             String readFromKeyboard = keyboard.readLine();
             toServer.println(readFromKeyboard);

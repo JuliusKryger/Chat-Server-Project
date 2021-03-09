@@ -20,6 +20,7 @@ public class Server {
 
     private void startServer(int port) throws IOException {
         ServerSocket serverSocket;
+        MsgDispatcher msgDispatcher = new MsgDispatcher();
         allClientHandlers = new ConcurrentHashMap<>();
         serverSocket = new ServerSocket(port);
         System.out.println("Server is starting ...");
@@ -29,11 +30,21 @@ public class Server {
             System.out.println("Waiting for a client");
             Socket socket = serverSocket.accept();
             System.out.println("A new client has just connected, client ID is " + ClientHandler.getId());
-            ClientHandler clientHandler = new ClientHandler(socket, this);
+            ClientHandler clientHandler = new ClientHandler(socket, this, msgDispatcher);
             allClientHandlers.put(clientHandler.getId(), clientHandler);
             new Thread(clientHandler).start();
         }
     }
+
+    public ClientHandler getClientNameFromClientHandler(String name){
+        for (ClientHandler clientHandler : allClientHandlers.values()){
+            if (clientHandler.getName().contains(name)){
+                return clientHandler;
+            }
+        }
+        return null;
+    }
+
 }
 
 

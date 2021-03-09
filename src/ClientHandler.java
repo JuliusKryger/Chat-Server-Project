@@ -14,11 +14,22 @@ public class ClientHandler implements Runnable {
     MsgDispatcher msgDispatcher;
     private static int id = 0;
     Server server;
+    String name;
 
 
-    public ClientHandler(Socket client, Server server) throws IOException {
+    public PrintWriter getToClient() {
+        return toClient;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ClientHandler(Socket client, Server server, MsgDispatcher msgDispatcher) throws IOException {
         this.id++;
+        this.server = server;
         this.client = client;
+        this.msgDispatcher = msgDispatcher;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
         toClient = new PrintWriter(client.getOutputStream(),true);
 
@@ -46,7 +57,7 @@ public class ClientHandler implements Runnable {
         toClient.println("What would you like to do?");
         toClient.println("Send a message to one person, all or see online users?");
         toClient.println("For one person press 1, for all press A, for users press U");
-        toClient.println("Press E to exit");
+        toClient.println("Press e to exit");
         String msg = " ";
         String input = fromClient.readLine();
         while (!input.equals("E")) {
@@ -60,7 +71,7 @@ public class ClientHandler implements Runnable {
                 case "U":
                     seeUsers();
                     break;
-                case "E":
+                case "e":
                     clientGoodBye();
                     System.exit(1);
             }
@@ -73,15 +84,17 @@ public class ClientHandler implements Runnable {
     public void msgToOne() throws IOException {
         toClient.println("Put in the name of the user you want to talk to: ");
         String clientInput = fromClient.readLine();
-        if (server.allClientHandlers.containsValue(clientInput)){
-            toClient.println("What is your message");
+        ClientHandler clientHandler = server.getClientNameFromClientHandler(clientInput);
+        PrintWriter newToClient = clientHandler.getToClient();
+        if (newToClient !=null){
+            toClient.println("What is your message:");
+            //String msg = "SEND#Lone#Hej fra Kurt ";
             String msg = fromClient.readLine();
-            msgDispatcher.messageToOneClient(msg);
+            msgDispatcher.messageToOneClient(msg, newToClient, this.name);
             msgDispatcher.messageQueue(msg);
             //tror den tager alle nu??
-            server.allClientHandlers.values().forEach(clientHandler -> {
-                clientHandler.sendMsg(msg);
-            });
+            //server.allClientHandlers.values().forEach(clientHandler -> {
+                //clientHandler.sendMsg(msg)};
         }else{
             toClient.println("The user does not exist or is not online ");
         }
@@ -106,13 +119,14 @@ public class ClientHandler implements Runnable {
         System.out.println("Welcome to our virtual server");
         toClient.println("What is your name");
         String name = fromClient.readLine();
-        Thread.currentThread().setName(name);
+        this.name = name;
         ///???
         toClient.println("Hello " + name);
 
     }
 
     public void seeUsers(){
+        System.out.println(server.allClientHandlers.values());
 
     }
 

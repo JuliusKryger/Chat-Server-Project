@@ -35,7 +35,7 @@ public class Server {
         }
     }
 }
-<<<<<<< HEAD
+
 
 
 
@@ -78,5 +78,3 @@ public class Server {
 }
  */
 
-=======
->>>>>>> main

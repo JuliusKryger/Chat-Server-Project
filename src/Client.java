@@ -18,14 +18,10 @@ public class Client extends Thread {
         PrintWriter toServer = new PrintWriter(accessSocket.getOutputStream(), true);
         boolean running = true;
 
-<<<<<<< HEAD
 
         while (running) {
-=======
-        while (running){
->>>>>>> main
-            System.out.println("Welcome to our virtual server");
 
+            System.out.println("Welcome to our virtual server");
             System.out.println("type 'stop' to end connection");
             System.out.println("----------");
 
@@ -37,15 +33,13 @@ public class Client extends Thread {
             System.out.println("FROM SERVER :" + serverResponse);
 
 
-<<<<<<< HEAD
             accessSocket.close();
             System.exit(0);
         }
 
-
-=======
-        accessSocket.close();
-        System.exit(0);
->>>>>>> main
     }
 }
+
+
+
+

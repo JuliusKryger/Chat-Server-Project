@@ -21,9 +21,9 @@ public class ClientHandler implements Runnable {
         this.client = client;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
         toClient = new PrintWriter(client.getOutputStream(),true);
-
-
     }
+
+
 
     //This will be used later in our serverClass, as an unique identifier.
     public static int getId() {
@@ -84,9 +84,9 @@ public class ClientHandler implements Runnable {
         //Den skal kunne sende ud til alle
     }
 
-    public void clientGreeting() {
+    public void clientGreeting() throws IOException {
         toClient.println("What is your name");
-        String name = scanner.nextLine();
+        String name = fromClient.readLine();
         Thread.currentThread().setName(name);
         toClient.println("Hello " + name);
 
@@ -97,3 +97,5 @@ public class ClientHandler implements Runnable {
         Thread.currentThread().getName();
     }
 }
+
+

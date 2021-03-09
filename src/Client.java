@@ -18,14 +18,12 @@ public class Client extends Thread {
         BufferedReader input = new BufferedReader(new InputStreamReader(accessSocket.getInputStream()));
         BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter toServer = new PrintWriter(accessSocket.getOutputStream(), true);
-
-<<<<<<< HEAD
         boolean running = true;
+
+
         while (running) {
-=======
-        while (running){
             System.out.println("Welcome to our virtual server");
->>>>>>> AlekBranch
+
             System.out.println("type 'stop' to end connection");
             System.out.println("----------");
 
@@ -36,14 +34,11 @@ public class Client extends Thread {
             String serverResponse = input.readLine();
             System.out.println("FROM SERVER :" + serverResponse);
 
+
+            accessSocket.close();
+            System.exit(0);
         }
 
 
-
-
-        accessSocket.close();
-        System.exit(0);
     }
-
-
 }

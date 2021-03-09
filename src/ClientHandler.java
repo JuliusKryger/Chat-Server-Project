@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -13,18 +14,14 @@ public class ClientHandler implements Runnable {
     boolean running = true;
     Scanner scanner = new Scanner(System.in);
     MsgDispatcher msgDispatcher;
-
-    //Provides each instance with a unique id. Simulates the unique userid we will need for the chat-server
     private static int id = 0;
 
     public ClientHandler(Socket client, Server server) throws IOException {
         this.id++;
         this.client = client;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
-
         toClient = new PrintWriter(client.getOutputStream(),true);
 
-        toClient = new PrintWriter(client.getOutputStream(), true);
 
     }
 
@@ -46,12 +43,10 @@ public class ClientHandler implements Runnable {
     }
 
     public void protocol() throws IOException {
-
-        String placeholder = null;
-
         toClient.println("Send a message to one person or all?");
         toClient.println("For one person press 1, for all press A");
         toClient.println("Press E to exit");
+        String msg = " ";
         String input = fromClient.readLine();
         while (!input.equals("E")) {
             switch (input) {
@@ -59,7 +54,7 @@ public class ClientHandler implements Runnable {
                     msgToOne();
                     break;
                 case "A":
-                    msgToAll(placeholder);
+                    msgToAll(msg);
                     break;
                 case "E":
                     clientGoodBye();

@@ -129,7 +129,13 @@ public class ClientHandler implements Runnable {
     }
 
     public void seeUsers() {
+<<<<<<< HEAD
         toClient.println(server.allClientHandlers.values().toString());
+=======
+
+        toClient.println(server.allClientHandlers.values().toString());
+
+>>>>>>> AlekBranch
     }
 
     public void clientGoodBye() throws IOException {

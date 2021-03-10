@@ -1,9 +1,12 @@
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.Socket;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class MsgDispatcher {
 
@@ -22,13 +25,11 @@ public class MsgDispatcher {
         message.add(msg);
     }
 
-    public void messageToAll( PrintWriter toClient, BufferedReader fromClient) throws IOException {
+    public void messageToAll(Socket client, PrintWriter toClient, ConcurrentHashMap allClients) throws IOException{
         toClient.println("What is your message");
+        BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
         String msg = fromClient.readLine();
-        for (ClientHandler clientHandler : server.allClientHandlers.values()){
-            toClient.println(msg);
-            messageQueue(msg);
-        }
+        toClient.println("MESSAGE#" + "*#" + msg);
 
 
 

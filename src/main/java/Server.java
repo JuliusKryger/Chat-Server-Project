@@ -37,13 +37,13 @@ public class Server {
         }
     }
 
-    public ClientHandler getClientNameFromClientHandler(String name) {
+    public Object getClientNameFromClientHandler(String name) {
         for (ClientHandler clientHandler : allClientHandlers.values()) {
             if (clientHandler.getName().contains(name)) {
                 return clientHandler;
             }
         }
-        return null;
+        return allClientHandlers;
     }
 }
 

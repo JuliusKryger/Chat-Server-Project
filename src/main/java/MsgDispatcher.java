@@ -1,43 +1,48 @@
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.Socket;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class MsgDispatcher {
+public class MsgDispatcher extends Thread {
 
     BlockingQueue<PrintWriter> msgToAllClients;
     BlockingQueue<PrintWriter> msgToOneClient;
     BlockingQueue<String> message;
-    Server server;
+    ConcurrentHashMap<Integer, ClientHandler> clientHandlers;
 
-    public MsgDispatcher() {
+    public MsgDispatcher(BlockingQueue<String> allMsg, ConcurrentHashMap<Integer, ClientHandler> clientHandlers) {
         msgToAllClients = null;
         msgToOneClient = null;
-        message = new ArrayBlockingQueue<>(200);
+        this.message = allMsg;
+        this.clientHandlers = clientHandlers;
+    }
+
+    @Override
+    public void run() {
+        String msg = " ";
+        try {
+            msg = message.take();
+            messageToAll(msg);
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void messageQueue(String msg) {
         message.add(msg);
     }
 
-    public void messageToAll(Socket client, PrintWriter toClient, ConcurrentHashMap allClients) throws IOException{
-        toClient.println("What is your message");
-        BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
-        String msg = fromClient.readLine();
-        toClient.println("MESSAGE#" + "*#" + msg);
-
-
-
+    public void messageToAll(String msg) throws IOException {
+        Set<Integer> set = clientHandlers.keySet();
+        for (Integer i : set) {
+            ClientHandler cl = clientHandlers.get(i);
+            cl.getToClient().println(msg);
+        }
     }
 
     public void messageToOneClient(String msg, PrintWriter client, String name) {
         //Command#User#hej
         client.println("MESSAGE#" + name + "#" + msg);
     }
-
 }

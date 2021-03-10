@@ -3,31 +3,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.BlockingQueue;
 
 public class ClientHandler implements Runnable {
 
     private Socket client;
     private BufferedReader fromClient;
     private PrintWriter toClient;
-    boolean running = true;
-    MsgDispatcher msgDispatcher;
+    BlockingQueue<String> messageQueue;
     private static int id = 0;
     Server server;
     String name;
+    MsgDispatcher msgDispatcher;
+    private int clientId;
 
-
-
-    public ClientHandler(Socket client, Server server, MsgDispatcher msgDispatcher) throws IOException {
-        this.id++;
+    public ClientHandler(Socket client, Server server, BlockingQueue<String> messageQueue) throws IOException {
+        id++;
+        clientId = id;
         this.server = server;
         this.client = client;
-        this.msgDispatcher = msgDispatcher;
+        this.messageQueue = messageQueue;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
         toClient = new PrintWriter(client.getOutputStream(), true);
     }
-
 
     //This will be used later in our serverClass, as an unique identifier.
     public static int getId() {
@@ -43,7 +41,6 @@ public class ClientHandler implements Runnable {
             System.err.println("There is a problem in run method");
             e.printStackTrace();
         }
-
     }
 
     public void protocol() throws IOException {
@@ -70,7 +67,6 @@ public class ClientHandler implements Runnable {
             toClient.println("Now what? 1/A/U/e");
             input = fromClient.readLine();
         }
-
     }
 
     public void msgToOne() throws IOException {
@@ -84,7 +80,6 @@ public class ClientHandler implements Runnable {
             String msg = fromClient.readLine();
             msgDispatcher.messageToOneClient(msg, newToClient, this.name);
             msgDispatcher.messageQueue(msg);
-
         } else {
             toClient.println("The user does not exist or is not online ");
         }
@@ -92,15 +87,13 @@ public class ClientHandler implements Runnable {
         //der mangler noget mere så man ved hvor man skal sende den hen
         //Evt før hvad den spørger om hvad man vil sende
         //Skal finde en tråd med et bestemt navn og sige hvis der ikke er nogen tråde som hedder det.
-
-
     }
 
     public void msgToAll() throws IOException {
-        //toClient.println("What is your message");
-        //String msg = fromClient.readLine();
-        msgDispatcher.messageToAll(client, toClient, server.allClientHandlers);
-
+        toClient.println("What is your message");
+        String msg = fromClient.readLine();
+        messageQueue.add(msg);
+        //msgDispatcher.messageToAll(client, toClient, server.allClientHandlers);
     }
 
     public void clientGreeting() throws IOException {
@@ -111,7 +104,6 @@ public class ClientHandler implements Runnable {
         toClient.println("What is your name");
         this.name = name;
         toClient.println("Hello " + name);
-
     }
 
     @Override
@@ -137,6 +129,9 @@ public class ClientHandler implements Runnable {
     public String getName() {
         return name;
     }
-}
 
+    public int getClientId() {
+        return clientId;
+    }
+}
 

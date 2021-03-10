@@ -4,16 +4,21 @@ import java.net.Socket;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
-    public static int port = 9090;
+    //Call server port with arguments like this: 8080
+    public static int port = 5555;
     ConcurrentHashMap<Integer, ClientHandler> allClientHandlers;
 
     public static void main(String[] args) throws IOException {
-        if (args.length == 1) {
-            try {
+        try {
+            if (args.length == 1) {
                 port = Integer.parseInt(args[0]);
-            } catch (NumberFormatException e) {
-                System.out.println("ERROR: Invalid port number, using default port :" + port);
             }
+            else {
+                throw new IllegalArgumentException("Server not provided with the right arguments");
+            }
+        } catch (NumberFormatException ne) {
+            System.out.println("Illegal inputs provided when starting the server!");
+            return;
         }
         new Server().startServer(port);
     }

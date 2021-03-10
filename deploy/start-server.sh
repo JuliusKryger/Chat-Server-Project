@@ -1,1 +1,1 @@
-java -cp my-server.jar Chat-Server-Project 5555
+java -cp Chat-Server-Project.jar Chat-Server-Project 5555

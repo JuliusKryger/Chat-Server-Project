@@ -1,12 +1,17 @@
+package main.java;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
     //Call server port with arguments like this: 8080
     public static int port = 9090;
     ConcurrentHashMap<Integer, ClientHandler> allClientHandlers;
+    BlockingQueue<String> message = new ArrayBlockingQueue<>(200);
 
     public static void main(String[] args) throws IOException {
         try {
@@ -21,19 +26,23 @@ public class Server {
 
     private void startServer(int port) throws IOException {
         ServerSocket serverSocket;
-        MsgDispatcher msgDispatcher = new MsgDispatcher();
         allClientHandlers = new ConcurrentHashMap<>();
+        MsgDispatcher msgDispatcher = new MsgDispatcher(message, allClientHandlers);
+        msgDispatcher.start();
         serverSocket = new ServerSocket(port);
         System.out.println("Server is starting ...");
         System.out.println("Now listening on port : " + port);
 
         while (true) {
+
             System.out.println("Waiting for a client");
             Socket socket = serverSocket.accept();
             System.out.println("A new client has just connected, client ID is " + ClientHandler.getId());
-            ClientHandler clientHandler = new ClientHandler(socket, this, msgDispatcher);
-            allClientHandlers.put(clientHandler.getId(), clientHandler);
+            ClientHandler clientHandler = new ClientHandler(socket, this, message);
+            int id = clientHandler.getClientId();
+            allClientHandlers.put(id, clientHandler);
             new Thread(clientHandler).start();
+
         }
     }
 

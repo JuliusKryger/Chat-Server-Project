@@ -1,9 +1,12 @@
+package main.java;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ClientHandler implements Runnable {
@@ -12,18 +15,21 @@ public class ClientHandler implements Runnable {
     private BufferedReader fromClient;
     private PrintWriter toClient;
     boolean running = true;
-    MsgDispatcher msgDispatcher;
+    BlockingQueue<String> messageQueue;
     private static int id = 0;
     Server server;
     String name;
+    MsgDispatcher msgDispatcher;
+    private int clientId;
 
 
 
-    public ClientHandler(Socket client, Server server, MsgDispatcher msgDispatcher) throws IOException {
-        this.id++;
+    public ClientHandler(Socket client, Server server, BlockingQueue <String> messageQueue) throws IOException {
+        id++;
+        clientId = id;
         this.server = server;
         this.client = client;
-        this.msgDispatcher = msgDispatcher;
+        this.messageQueue = messageQueue;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
         toClient = new PrintWriter(client.getOutputStream(), true);
     }
@@ -97,9 +103,11 @@ public class ClientHandler implements Runnable {
     }
 
     public void msgToAll() throws IOException {
-        //toClient.println("What is your message");
-        //String msg = fromClient.readLine();
-        msgDispatcher.messageToAll(client, toClient, server.allClientHandlers);
+        toClient.println("What is your message");
+        String msg = fromClient.readLine();
+        messageQueue.add(msg);
+        //msgDispatcher.messageToAll(client, toClient, server.allClientHandlers);
+
 
     }
 
@@ -131,6 +139,10 @@ public class ClientHandler implements Runnable {
 
     public String getName() {
         return name;
+    }
+
+    public int getClientId() {
+        return clientId;
     }
 }
 

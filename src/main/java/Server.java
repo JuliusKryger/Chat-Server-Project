@@ -5,7 +5,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
     //Call server port with arguments like this: 8080
-    public static int port = 5555;
+    public static int port = 9090;
     ConcurrentHashMap<Integer, ClientHandler> allClientHandlers;
 
     public static void main(String[] args) throws IOException {

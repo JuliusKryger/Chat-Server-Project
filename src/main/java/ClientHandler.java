@@ -116,26 +116,18 @@ public class ClientHandler implements Runnable {
 
     @Override
     public String toString() {
-        System.out.println("Following Users are online: ");
+        toClient.println("Following Users are online: ");
         return name;
     }
 
     public void seeUsers() {
-<<<<<<< HEAD:src/ClientHandler.java
-        System.out.println(server.allClientHandlers.values());
-        toClient.println(server.allClientHandlers.values());
-
-
-=======
         toClient.println(server.allClientHandlers.values().toString());
->>>>>>> cc69a0c46b1f99fb799ea51dbccd2360c5341faf:src/main/java/ClientHandler.java
     }
 
     public void clientGoodBye() throws IOException {
         toClient.println("Your connection is now terminated");
         Thread.currentThread().getName();
         client.close();
-        
     }
 
     public PrintWriter getToClient() {

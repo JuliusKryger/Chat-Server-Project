@@ -22,13 +22,15 @@ public class MsgDispatcher {
         message.add(msg);
     }
 
-    public void messageToAll(String msg, PrintWriter toClient, BufferedReader fromClient) throws IOException {
+    public void messageToAll( PrintWriter toClient, BufferedReader fromClient) throws IOException {
         toClient.println("What is your message");
-        msg = fromClient.readLine();
-        for (ClientHandler clientHandler : server.allClientHandlers.values()) {
-            clientHandler.msgToAll();
+        String msg = fromClient.readLine();
+        for (ClientHandler clientHandler : server.allClientHandlers.values()){
+            toClient.println(msg);
+            messageQueue(msg);
         }
-        messageQueue(msg);
+
+
 
     }
 

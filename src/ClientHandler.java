@@ -95,8 +95,8 @@ public class ClientHandler implements Runnable {
     }
 
     public void msgToAll() throws IOException {
-        String msg = " ";
-        msgDispatcher.messageToAll(msg, toClient,fromClient);
+        msgDispatcher.messageToAll(toClient, fromClient);
+
     }
 
     public void clientGreeting() throws IOException {

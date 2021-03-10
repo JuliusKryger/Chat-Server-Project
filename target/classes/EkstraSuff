@@ -1,0 +1,23 @@
+ClientHandler run;
+try {
+            while (running) {
+                String requestFromClient = fromClient.readLine();
+                if (requestFromClient.contains("1")) {
+                    toClient.println("1");
+                } else {
+                    toClient.println(" type 1 to get 1" );
+                }
+            }
+        } catch (IOException e){
+            System.out.println("IO exception in clientHandler class ");
+            e.printStackTrace();
+        } finally {
+            System.out.println("Connection closed");
+            toClient.close();
+            try {
+                fromClient.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }

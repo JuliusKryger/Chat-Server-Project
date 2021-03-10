@@ -122,6 +122,12 @@ public class ClientHandler implements Runnable {
 
     }
 
+    @Override
+    public String toString() {
+        toClient.println("Following Users are online: ");
+        return name;
+    }
+
     public void seeUsers() {
         toClient.println(server.allClientHandlers.values().toString());
     }
@@ -130,7 +136,6 @@ public class ClientHandler implements Runnable {
         toClient.println("Your connection is now terminated");
         Thread.currentThread().getName();
         client.close();
-        
     }
 
     public PrintWriter getToClient() {

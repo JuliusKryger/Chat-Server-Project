@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ClientHandler implements Runnable {
 
@@ -14,6 +16,7 @@ public class ClientHandler implements Runnable {
     private static int id = 0;
     Server server;
     String name;
+
 
 
     public ClientHandler(Socket client, Server server, MsgDispatcher msgDispatcher) throws IOException {
@@ -73,7 +76,7 @@ public class ClientHandler implements Runnable {
     public void msgToOne() throws IOException {
         toClient.println("Put in the name of the user you want to talk to: ");
         String clientInput = fromClient.readLine();
-        ClientHandler clientHandler = server.getClientNameFromClientHandler(clientInput);
+        ClientHandler clientHandler = (ClientHandler) server.getClientNameFromClientHandler(clientInput);
         PrintWriter newToClient = clientHandler.getToClient();
         if (newToClient != null) {
             toClient.println("What is your message:");
@@ -94,7 +97,9 @@ public class ClientHandler implements Runnable {
     }
 
     public void msgToAll() throws IOException {
-        msgDispatcher.messageToAll(toClient, fromClient);
+        //toClient.println("What is your message");
+        //String msg = fromClient.readLine();
+        msgDispatcher.messageToAll(client, toClient, server.allClientHandlers);
 
     }
 
@@ -102,15 +107,28 @@ public class ClientHandler implements Runnable {
         toClient.println("What is your name");
         String name = fromClient.readLine();
         Thread.currentThread().setName(name);
-        System.out.println("Welcome to our virtual server");
+        toClient.println("Welcome to our virtual server");
         toClient.println("What is your name");
         this.name = name;
         toClient.println("Hello " + name);
 
     }
 
+    @Override
+    public String toString() {
+        System.out.println("Following Users are online: ");
+        return name;
+    }
+
     public void seeUsers() {
+<<<<<<< HEAD:src/ClientHandler.java
         System.out.println(server.allClientHandlers.values());
+        toClient.println(server.allClientHandlers.values());
+
+
+=======
+        toClient.println(server.allClientHandlers.values().toString());
+>>>>>>> cc69a0c46b1f99fb799ea51dbccd2360c5341faf:src/main/java/ClientHandler.java
     }
 
     public void clientGoodBye() throws IOException {

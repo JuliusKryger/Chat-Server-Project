@@ -108,11 +108,12 @@ public class ClientHandler implements Runnable {
 
     @Override
     public String toString() {
-        toClient.println("Following Users are online: ");
+        //toClient.println("Following Users are online: ");
         return name;
     }
 
     public void seeUsers() {
+        toClient.println("Following Users are online");
         toClient.println(server.allClientHandlers.values().toString());
     }
 

@@ -9,8 +9,5 @@
         <module name="Chat-Server-Project" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Chat-Server-Project" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

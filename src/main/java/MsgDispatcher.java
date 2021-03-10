@@ -1,15 +1,6 @@
-package main.java;
-
-import jdk.jshell.spi.ExecutionControl;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.Socket;
-import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -18,18 +9,13 @@ public class MsgDispatcher extends Thread {
     BlockingQueue<PrintWriter> msgToAllClients;
     BlockingQueue<PrintWriter> msgToOneClient;
     BlockingQueue<String> message;
-    Server server;
-    ClientHandler clientHandler;
-    ConcurrentHashMap <Integer, ClientHandler> clientHandlers;
+    ConcurrentHashMap<Integer, ClientHandler> clientHandlers;
 
-
-    public MsgDispatcher(BlockingQueue <String> allMsg, ConcurrentHashMap <Integer, ClientHandler> clientHandlers) {
+    public MsgDispatcher(BlockingQueue<String> allMsg, ConcurrentHashMap<Integer, ClientHandler> clientHandlers) {
         msgToAllClients = null;
         msgToOneClient = null;
         this.message = allMsg;
         this.clientHandlers = clientHandlers;
-
-
     }
 
     @Override
@@ -47,9 +33,9 @@ public class MsgDispatcher extends Thread {
         message.add(msg);
     }
 
-    public void messageToAll(String msg) throws IOException{
+    public void messageToAll(String msg) throws IOException {
         Set<Integer> set = clientHandlers.keySet();
-        for (Integer i: set){
+        for (Integer i : set) {
             ClientHandler cl = clientHandlers.get(i);
             cl.getToClient().println(msg);
         }
@@ -59,5 +45,4 @@ public class MsgDispatcher extends Thread {
         //Command#User#hej
         client.println("MESSAGE#" + name + "#" + msg);
     }
-
 }

@@ -1,5 +1,3 @@
-package main.java;
-
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
     //Call server port with arguments like this: 8080
-    public static int port = 9090;
+    public static int port = 5555;
     ConcurrentHashMap<Integer, ClientHandler> allClientHandlers;
     BlockingQueue<String> message = new ArrayBlockingQueue<>(200);
 
@@ -32,9 +30,7 @@ public class Server {
         serverSocket = new ServerSocket(port);
         System.out.println("Server is starting ...");
         System.out.println("Now listening on port : " + port);
-
         while (true) {
-
             System.out.println("Waiting for a client");
             Socket socket = serverSocket.accept();
             System.out.println("A new client has just connected, client ID is " + ClientHandler.getId());
@@ -42,7 +38,6 @@ public class Server {
             int id = clientHandler.getClientId();
             allClientHandlers.put(id, clientHandler);
             new Thread(clientHandler).start();
-
         }
     }
 
@@ -55,4 +50,3 @@ public class Server {
         return allClientHandlers;
     }
 }
-

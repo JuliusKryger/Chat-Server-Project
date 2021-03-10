@@ -3,112 +3,55 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdf1bd08-34a1-4210-8304-5cd0feba33b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Server-Project/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Server-Project/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Server-Project/MsgDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Server-Project/MsgDispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientHandler.java" afterDir="false" />
-    <list default="true" id="d56324c7-b596-424b-9811-ad0d217d8fb5" name="Default Changelist" comment="">
-<<<<<<< HEAD
-      <change afterPath="$PROJECT_DIR$/Resources/OpgaveBeskrivelse" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-=======
-<<<<<<< HEAD
+    <list default="true" id="134e7607-6137-4571-9367-69dda9d4da9f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Server-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Server-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-=======
-      <change afterPath="$PROJECT_DIR$/Resources/OpgaveBeskrivelse" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> main
->>>>>>> AlekBranch
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/StartServer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Server-Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deploy-to-droplet.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deploy/start-server.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deploy/start-server.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MsgDispatcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Extra" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/OpgaveBeskrivelse" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ClientHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ClientTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MsgDispatcherTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ServerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.2\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="1pT5AgFqc3T98lsnmIrYBnR6obm" />
+  <component name="ProjectId" id="1pZAh4NJaTHohmVPgIQqkxsDvWw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="true" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-<<<<<<< HEAD
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MultiClientSocket" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-=======
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
->>>>>>> AlekBranch
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\23300\IdeaProjects\Chat-Server-Project\Resources" />
-    </key>
-    85cae4a3702a388e1f7d9b2d4568b4abf9d71d5c
-  </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Application.Server (1)">
-=======
-  <component name="RunManager" selected="Application.Server">
->>>>>>> AlekBranch
+  <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -120,56 +63,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client" />
-      <module name="Chat-Server-Project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.java.Server" />
-      <module name="Chat-Server-Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-<<<<<<< HEAD
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server" />
-      <module name="Chat-Server-Project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-=======
->>>>>>> AlekBranch
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Server (1)" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
-        <item itemvalue="Application.Server (1)" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cdf1bd08-34a1-4210-8304-5cd0feba33b5" name="Default Changelist" comment="" />
-      <created>1615280920042</created>
+      <changelist id="134e7607-6137-4571-9367-69dda9d4da9f" name="Default Changelist" comment="" />
+      <created>1615380354304</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1615280920042</updated>
+      <updated>1615380354304</updated>
+      <workItem from="1615380356597" duration="722000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -183,63 +91,4 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-<<<<<<< HEAD
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1615375587186">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375587186" />
-    <state width="1281" height="213" key="GridCell.Tab.0.bottom" timestamp="1615375875594">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875594" />
-    <state width="1281" height="213" key="GridCell.Tab.0.center" timestamp="1615375875594">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875594" />
-    <state width="1281" height="213" key="GridCell.Tab.0.left" timestamp="1615375875593">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875593" />
-    <state width="1281" height="213" key="GridCell.Tab.0.right" timestamp="1615375875594">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875594" />
-    <state width="1281" height="213" key="GridCell.Tab.1.bottom" timestamp="1615375875594">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875594" />
-    <state width="1281" height="213" key="GridCell.Tab.1.center" timestamp="1615375875594">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.1.center/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875594" />
-    <state width="1281" height="213" key="GridCell.Tab.1.left" timestamp="1615375875594">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.1.left/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875594" />
-    <state width="1281" height="213" key="GridCell.Tab.1.right" timestamp="1615375875594">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="213" key="GridCell.Tab.1.right/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615375875594" />
-  </component>
 </project>
-=======
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1615375305409">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615375305409" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1615375305409">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615375305409" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1615375305409">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615375305409" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1615375305409">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1615375305409" />
-  </component>
-</project>
->>>>>>> AlekBranch

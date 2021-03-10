@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="134e7607-6137-4571-9367-69dda9d4da9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/StartServer.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Server-Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy-to-droplet.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/start-server.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy/start-server.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ClientHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MsgDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Extra" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/OpgaveBeskrivelse" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClientHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MsgDispatcherTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ClientHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClientHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,18 +31,45 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClientHandlerTest">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chat-Server-Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClientHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClientHandlerTest.testClientSendMsg" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chat-Server-Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ClientHandlerTest" />
+      <option name="METHOD_NAME" value="testClientSendMsg" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ClientHandlerTest" />
+        <item itemvalue="JUnit.ClientHandlerTest.testClientSendMsg" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,6 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615380354304</updated>
       <workItem from="1615380356597" duration="722000" />
+      <workItem from="1615390191013" duration="1516000" />
     </task>
     <servers />
   </component>

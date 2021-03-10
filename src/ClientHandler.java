@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Scanner;
 
 public class ClientHandler implements Runnable {
 
@@ -16,14 +15,6 @@ public class ClientHandler implements Runnable {
     Server server;
     String name;
 
-
-    public PrintWriter getToClient() {
-        return toClient;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public ClientHandler(Socket client, Server server, MsgDispatcher msgDispatcher) throws IOException {
         this.id++;
@@ -74,7 +65,7 @@ public class ClientHandler implements Runnable {
                     clientGoodBye();
                     System.exit(1);
             }
-            toClient.println("Now what? 1/A/E");
+            toClient.println("Now what? 1/A/U/e");
             input = fromClient.readLine();
         }
 
@@ -91,9 +82,7 @@ public class ClientHandler implements Runnable {
             String msg = fromClient.readLine();
             msgDispatcher.messageToOneClient(msg, newToClient, this.name);
             msgDispatcher.messageQueue(msg);
-            //tror den tager alle nu??
-            //server.allClientHandlers.values().forEach(clientHandler -> {
-            //clientHandler.sendMsg(msg)};
+
         } else {
             toClient.println("The user does not exist or is not online ");
         }
@@ -106,32 +95,23 @@ public class ClientHandler implements Runnable {
     }
 
     public void msgToAll() throws IOException {
-        toClient.println("What is your message");
-        String msg = fromClient.readLine();
-        msgDispatcher.messageToAll(msg);
-        msgDispatcher.messageQueue(msg);
-        //Den skal kunne sende ud til alle
+        String msg = " ";
+        msgDispatcher.messageToAll(msg, toClient,fromClient);
     }
 
     public void clientGreeting() throws IOException {
-
         toClient.println("What is your name");
         String name = fromClient.readLine();
         Thread.currentThread().setName(name);
-
         System.out.println("Welcome to our virtual server");
         toClient.println("What is your name");
-        //String name = fromClient.readLine();
         this.name = name;
-        ///???
-
         toClient.println("Hello " + name);
 
     }
 
     public void seeUsers() {
         System.out.println(server.allClientHandlers.values());
-
     }
 
     public void clientGoodBye() {
@@ -139,8 +119,12 @@ public class ClientHandler implements Runnable {
         Thread.currentThread().getName();
     }
 
-    public void sendMsg(String msg) {
-        toClient.println(msg);
+    public PrintWriter getToClient() {
+        return toClient;
+    }
+
+    public String getName() {
+        return name;
     }
 }
 

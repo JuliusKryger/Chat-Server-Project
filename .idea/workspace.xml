@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d56324c7-b596-424b-9811-ad0d217d8fb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/deploy/start-server.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/start-server.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/start-server.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +28,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MultiClientSocket" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Server">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Chat-Server-Project" />
@@ -42,17 +54,6 @@
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server" />
       <module name="Chat-Server-Project" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,39 +87,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="400" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615199755204">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="400" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615199755204" />
-    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1615287305357">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615287305357" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1615196819503">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615196819503" />
-    <state width="1281" height="170" key="GridCell.Tab.0.bottom" timestamp="1615288840625">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615288840625" />
-    <state width="1281" height="170" key="GridCell.Tab.0.center" timestamp="1615288840625">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615288840625" />
-    <state width="1281" height="170" key="GridCell.Tab.0.left" timestamp="1615288840625">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615288840625" />
-    <state width="1281" height="170" key="GridCell.Tab.0.right" timestamp="1615288840625">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1281" height="170" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615288840625" />
-    <state x="484" y="98" key="refactoring.ChangeSignatureDialog" timestamp="1615279352866">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="484" y="98" key="refactoring.ChangeSignatureDialog/0.0.1280.680/-1920.-217.1920.1040@0.0.1280.680" timestamp="1615279352866" />
   </component>
 </project>

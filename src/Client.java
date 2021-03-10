@@ -18,19 +18,24 @@ public class Client extends Thread {
         PrintWriter toServer = new PrintWriter(accessSocket.getOutputStream(), true);
         boolean running = true;
 
-        while (running){
+
+        while (running) {
+
 
             String readFromKeyboard = keyboard.readLine();
             toServer.println(readFromKeyboard);
             String serverResponse = input.readLine();
             System.out.println("FROM SERVER :" + serverResponse);
 
+
+            accessSocket.close();
+            System.exit(0);
         }
 
-
-        accessSocket.close();
-        System.exit(0);
     }
-
-
 }
+
+
+
+
+

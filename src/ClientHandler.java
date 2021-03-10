@@ -109,8 +109,17 @@ public class ClientHandler implements Runnable {
 
     }
 
+    @Override
+    public String toString() {
+        System.out.println("Following Users are online: ");
+        return name;
+    }
+
     public void seeUsers() {
         System.out.println(server.allClientHandlers.values());
+        toClient.println(server.allClientHandlers.values());
+
+
     }
 
     public void clientGoodBye() throws IOException {

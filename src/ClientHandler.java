@@ -89,7 +89,7 @@ public class ClientHandler implements Runnable {
         if (newToClient !=null){
             toClient.println("What is your message:");
             //String msg = "SEND#Lone#Hej fra Kurt ";
-            String msg = fromClient.readLine();
+             String msg = fromClient.readLine();
             msgDispatcher.messageToOneClient(msg, newToClient, this.name);
             msgDispatcher.messageQueue(msg);
             //tror den tager alle nu??

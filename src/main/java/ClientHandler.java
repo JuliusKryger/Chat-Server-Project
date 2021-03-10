@@ -63,7 +63,6 @@ public class ClientHandler implements Runnable {
                     break;
                 case "e":
                     clientGoodBye();
-                    System.exit(1);
             }
             toClient.println("Now what? 1/A/U/e");
             input = fromClient.readLine();
@@ -114,9 +113,11 @@ public class ClientHandler implements Runnable {
         System.out.println(server.allClientHandlers.values());
     }
 
-    public void clientGoodBye() {
-        toClient.println("Goodbye ");
+    public void clientGoodBye() throws IOException {
+        toClient.println("Your connection is now terminated");
         Thread.currentThread().getName();
+        client.close();
+        
     }
 
     public PrintWriter getToClient() {

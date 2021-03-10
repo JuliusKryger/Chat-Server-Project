@@ -19,7 +19,7 @@ public class Client extends Thread {
         boolean running = true;
 
 
-        while (running){
+        while (running) {
 
 
             String readFromKeyboard = keyboard.readLine();

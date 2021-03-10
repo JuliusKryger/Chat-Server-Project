@@ -12,7 +12,7 @@ public class MsgDispatcher {
     public MsgDispatcher() {
         msgToAllClients = null;
         msgToOneClient = null;
-        message = new ArrayBlockingQueue<>( 200);
+        message = new ArrayBlockingQueue<>(200);
     }
 
     public void messageQueue(String msg) {
@@ -26,7 +26,7 @@ public class MsgDispatcher {
 
     public void messageToOneClient(String msg, PrintWriter client, String name) {
         //Command#User#hej
-        client.println("MESSAGE#" + name+ "#" + msg);
+        client.println("MESSAGE#" + name + "#" + msg);
     }
 
 }

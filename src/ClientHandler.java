@@ -31,10 +31,9 @@ public class ClientHandler implements Runnable {
         this.client = client;
         this.msgDispatcher = msgDispatcher;
         fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
-        toClient = new PrintWriter(client.getOutputStream(),true);
-
-
+        toClient = new PrintWriter(client.getOutputStream(), true);
     }
+
 
     //This will be used later in our serverClass, as an unique identifier.
     public static int getId() {
@@ -86,7 +85,7 @@ public class ClientHandler implements Runnable {
         String clientInput = fromClient.readLine();
         ClientHandler clientHandler = server.getClientNameFromClientHandler(clientInput);
         PrintWriter newToClient = clientHandler.getToClient();
-        if (newToClient !=null){
+        if (newToClient != null) {
             toClient.println("What is your message:");
             //String msg = "SEND#Lone#Hej fra Kurt ";
              String msg = fromClient.readLine();
@@ -94,15 +93,14 @@ public class ClientHandler implements Runnable {
             msgDispatcher.messageQueue(msg);
             //tror den tager alle nu??
             //server.allClientHandlers.values().forEach(clientHandler -> {
-                //clientHandler.sendMsg(msg)};
-        }else{
+            //clientHandler.sendMsg(msg)};
+        } else {
             toClient.println("The user does not exist or is not online ");
         }
 
         //der mangler noget mere så man ved hvor man skal sende den hen
         //Evt før hvad den spørger om hvad man vil sende
         //Skal finde en tråd med et bestemt navn og sige hvis der ikke er nogen tråde som hedder det.
-
 
 
     }
@@ -116,16 +114,22 @@ public class ClientHandler implements Runnable {
     }
 
     public void clientGreeting() throws IOException {
-        System.out.println("Welcome to our virtual server");
+
         toClient.println("What is your name");
         String name = fromClient.readLine();
+        Thread.currentThread().setName(name);
+
+        System.out.println("Welcome to our virtual server");
+        toClient.println("What is your name");
+        //String name = fromClient.readLine();
         this.name = name;
         ///???
+
         toClient.println("Hello " + name);
 
     }
 
-    public void seeUsers(){
+    public void seeUsers() {
         System.out.println(server.allClientHandlers.values());
 
     }
@@ -135,7 +139,9 @@ public class ClientHandler implements Runnable {
         Thread.currentThread().getName();
     }
 
-    public void sendMsg(String msg){
+    public void sendMsg(String msg) {
         toClient.println(msg);
     }
 }
+
+

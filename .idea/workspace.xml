@@ -41,15 +41,10 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MultiClientSocket" />
-<<<<<<< HEAD
-    &gt;&gt;&gt;&gt;&gt;&gt;&gt; main
-=======
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    =======
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -58,14 +53,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\23300\IdeaProjects\Chat-Server-Project\Resources" />
     </key>
-    &gt;&gt;&gt;&gt;&gt;&gt;&gt; 85cae4a3702a388e1f7d9b2d4568b4abf9d71d5c
->>>>>>> main
+    85cae4a3702a388e1f7d9b2d4568b4abf9d71d5c
   </component>
-<<<<<<< Updated upstream
-  <component name="RunManager" selected="Application.Server">
-=======
   <component name="RunManager" selected="Application.Server (1)">
->>>>>>> Stashed changes
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -85,9 +75,6 @@
       </method>
     </configuration>
     <configuration name="Server (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-<<<<<<< Updated upstream
-      <option name="MAIN_CLASS_NAME" value="Server" />
-=======
       <option name="MAIN_CLASS_NAME" value="main.java.Server" />
       <module name="Chat-Server-Project" />
       <extension name="coverage">
@@ -96,7 +83,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
->>>>>>> Stashed changes
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

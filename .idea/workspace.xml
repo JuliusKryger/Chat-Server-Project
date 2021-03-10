@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdf1bd08-34a1-4210-8304-5cd0feba33b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Server-Project/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Server-Project/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Server-Project/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Server-Project/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Server-Project/MsgDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Server-Project/MsgDispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chat-Server-Project/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chat-Server-Project/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -45,8 +45,8 @@ public class ClientHandler implements Runnable {
 
     public void protocol() throws IOException {
         toClient.println("What would you like to do?");
-        toClient.println("Send a message to one person, all or see online users?");
-        toClient.println("For one person press 1, for all press A, for users press U");
+        toClient.println("Send a message to one person, everyone or see all online users?");
+        toClient.println("For one person press 1: For everyone press A: To see all online users press U: ");
         toClient.println("Press e to exit");
         String msg = " ";
         String input = fromClient.readLine();
@@ -93,6 +93,7 @@ public class ClientHandler implements Runnable {
         toClient.println("What is your message");
         String msg = fromClient.readLine();
         messageQueue.add(msg);
+
         //msgDispatcher.messageToAll(client, toClient, server.allClientHandlers);
     }
 
@@ -100,10 +101,11 @@ public class ClientHandler implements Runnable {
         toClient.println("What is your name");
         String name = fromClient.readLine();
         Thread.currentThread().setName(name);
-        toClient.println("Welcome to our virtual server");
-        toClient.println("What is your name");
+        toClient.println("\nHello " + name);
         this.name = name;
-        toClient.println("Hello " + name);
+        toClient.println("  ");
+        toClient.println("Welcome to our virtual server");
+        toClient.println("  ");
     }
 
     @Override

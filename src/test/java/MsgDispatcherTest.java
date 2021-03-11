@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MsgDispatcherTest {
 
+    //Nothing here.
+
     @BeforeEach
     void setUp() {
     }

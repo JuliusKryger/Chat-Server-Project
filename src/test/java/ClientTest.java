@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ClientTest {
 
+    //Nothing here.
+
     @BeforeEach
     void setUp() {
     }

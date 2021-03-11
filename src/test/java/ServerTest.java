@@ -2,6 +2,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ServerTest {
 
+    //Nothing here.
+
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
     }

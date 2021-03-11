@@ -7,15 +7,15 @@ import java.util.concurrent.BlockingQueue;
 
 public class ClientHandler implements Runnable {
 
+    private static int id = 0;
+    private int clientId;
     private Socket client;
     private BufferedReader fromClient;
     private PrintWriter toClient;
     BlockingQueue<String> messageQueue;
-    private static int id = 0;
+    MsgDispatcher msgDispatcher;
     Server server;
     String name;
-    MsgDispatcher msgDispatcher;
-    private int clientId;
 
     public ClientHandler(Socket client, Server server, BlockingQueue<String> messageQueue) throws IOException {
         id++;

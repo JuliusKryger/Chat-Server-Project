@@ -6,7 +6,7 @@ public class Client extends Thread {
     public static void main(String[] args) throws IOException {
         //Julius-Droplet = 178.128.201.139@5555
         //adress = IP-adressen, localhost for local connection. - and port is the port you connect through.
-        new Client().connect("localhost", 9999);
+        new Client().connect("178.128.201.139", 5555);
     }
 
     public void connect(String address, int port) throws IOException {
